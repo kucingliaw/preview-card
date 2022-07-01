@@ -1,0 +1,101 @@
+:root {
+    --accent-color: hsl(31, 77%, 52%);
+    --dark-color: hsl(184, 100%, 22%);
+    --darker-color: hsl(179, 100%, 13%);
+    --light-color: hsla(0, 0%, 100%, 0.75);
+    --lighter-color: hsl(0, 0%, 95%);
+    --font: 'Big Shoulders Display', cursive;
+    --sub-font: 'Lexend Deca', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--lighter-color);
+    font-family: var(--sub-font);
+    font-size: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: min(90%, 1100px);
+}
+
+.row {
+    display: grid;
+    place-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
+}
+
+.card {
+    padding: 3em;
+
+    background-color: var(--accent-color);
+}
+
+.card__title {
+    font-size: 40px;
+    font-family: var(--font);
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--lighter-color);
+
+    margin-block: 1em 0.75em;
+}
+
+.card__description {
+    line-height: 1.8;
+    color: var(--light-color);
+    margin-bottom: 5em;
+}
+
+.card__btn {
+    font-family: inherit;
+    color: var(--accent-color);
+    background-color: var(--lighter-color) !important;
+    border-radius: 5rem;
+    border: none;
+    padding: 0.875rem 2.125rem;
+
+    transition: 0.3s all;
+    cursor: pointer;
+}
+
+.card__btn:hover {
+    opacity: 0.8;
+}
+
+.dark--green {
+    background-color: var(--dark-color);
+}
+
+.darker--green {
+    background-color: var(--darker-color);
+}
+
+.dark--green > button {
+    color: var(--dark-color);
+}
+
+.darker--green > button {
+    color: var(--darker-color);
+}
+
+@media (min-width: 1000px) {
+    .card:first-child {
+        border-radius: 10px 0 0 10px;
+    }
+
+    .card:last-child {
+        border-radius: 0 10px 10px 0;
+    }
+}
